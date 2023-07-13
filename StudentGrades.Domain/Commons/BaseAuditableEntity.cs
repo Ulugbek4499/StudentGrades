@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace StudentGrades.Domain.Commons
 {
-    internal class BaseAuditableEntity
+    public abstract class BaseAuditableEntity : BaseEntity
     {
+        public DateTimeOffset CreatedDate { get; set; }
+        public DateTimeOffset UpdatedDate { get; set; }
     }
 }

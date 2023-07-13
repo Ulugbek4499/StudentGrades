@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StudentGrades.Domain.Commons;
 
 namespace StudentGrades.Domain.Entities
 {
-    internal class Student
+    public class Student : BaseAuditableEntity
     {
-    }
+        public string Name { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string Email { get; set; }
+        public string StudentRegesterNumber { get; set; }
+
+        public virtual ICollection<Grade> Grades { get; set; }
+    }   
 }

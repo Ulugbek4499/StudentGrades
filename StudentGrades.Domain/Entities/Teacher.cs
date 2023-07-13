@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StudentGrades.Domain.Commons;
 
 namespace StudentGrades.Domain.Entities
 {
-    internal class Teacher
+    public class Teacher : BaseAuditableEntity
     {
+        public string Name { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string Email { get; set; }
+        public ICollection<Subject> Subjects { get; set; }
     }
 }

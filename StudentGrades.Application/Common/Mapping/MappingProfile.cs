@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using StudentGrades.Application.Common.Models;
 using StudentGrades.Domain.Entities;
 
 namespace StudentGrades.Application.Common.Mapping
@@ -12,10 +13,10 @@ namespace StudentGrades.Application.Common.Mapping
     {
         public MappingProfile()
         {
-   /*         CreateMap<Grade, GradeDto>().ReverseMap();
+            CreateMap<Grade, GradeDto>().ReverseMap();
             CreateMap<Student, StudentDto>().ReverseMap();
             CreateMap<Teacher, TeacherDto>().ReverseMap();
-            CreateMap<Subject, SubjectDto>().ReverseMap();*/
+            CreateMap<Subject, SubjectDto>().ReverseMap();
         }
     }
 }

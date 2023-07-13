@@ -21,7 +21,11 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\" />
+    <Folder Include="UseCases\Teachers\Commands\CreateTeacher\" />
+    <Folder Include="UseCases\Teachers\Commands\DeleteTeacher\" />
+    <Folder Include="UseCases\Teachers\Commands\UpdateTeacher\" />
+    <Folder Include="UseCases\Teachers\Queries\GetTeacher\" />
+    <Folder Include="UseCases\Teachers\Queries\GetTeachers\" />
   </ItemGroup>
 
   <ItemGroup>

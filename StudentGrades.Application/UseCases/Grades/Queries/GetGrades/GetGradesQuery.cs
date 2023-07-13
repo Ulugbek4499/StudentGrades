@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using StudentGrades.Application.Common.Interfaces;
 using StudentGrades.Application.Common.Models;
 using StudentGrades.Domain.Entities;

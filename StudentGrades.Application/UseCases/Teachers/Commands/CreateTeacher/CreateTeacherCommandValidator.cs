@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace StudentGrades.Application.UseCases.Teachers.Commands.CreateTeacher
 {
@@ -25,9 +20,9 @@ namespace StudentGrades.Application.UseCases.Teachers.Commands.CreateTeacher
                .MaximumLength(70)
                .WithMessage("Email is required.");
 
-          /*  RuleFor(u => u.Subjects)
-                .ForEach(r => r.NotEqual((Guid)default))
-                .WithMessage("Please enter valid subject");*/
+            /*  RuleFor(u => u.Subjects)
+                  .ForEach(r => r.NotEqual((Guid)default))
+                  .WithMessage("Please enter valid subject");*/
         }
     }
 }

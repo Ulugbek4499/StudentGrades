@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StudentGrades.Application.Common.Interfaces;
-using StudentGrades.Infrastructure.Persistence.Interceptors;
 using StudentGrades.Infrastructure.Persistence;
+using StudentGrades.Infrastructure.Persistence.Interceptors;
 using StudentGrades.Infrastructure.Services;
-using Microsoft.EntityFrameworkCore;
 
 namespace StudentGrades.Infrastructure
 {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace StudentGrades.Application.UseCases.Subjects.Commands.CreateSubject
 {
@@ -20,9 +15,9 @@ namespace StudentGrades.Application.UseCases.Subjects.Commands.CreateSubject
                 .NotEqual((Guid)default)
                 .WithMessage("Teacher id is required.");
 
-         /*   RuleFor(u => u.Grades)
-                .ForEach(r => r.NotEqual((Guid)default))
-                .WithMessage("Please enter valid grade");*/
+            /*   RuleFor(u => u.Grades)
+                   .ForEach(r => r.NotEqual((Guid)default))
+                   .WithMessage("Please enter valid grade");*/
         }
     }
 }

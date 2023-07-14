@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
-using StudentGrades.Application.Common.Exceptions;
 using StudentGrades.Application.Common.Interfaces;
 using StudentGrades.Application.Common.Models;
 using StudentGrades.Domain.Entities;

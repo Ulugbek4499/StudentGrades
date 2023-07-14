@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.RateLimiting;
 using StudentGrades.Application.Common.Models;
 using StudentGrades.Application.UseCases.Subjects.Commands.CreateSubject;
 using StudentGrades.Application.UseCases.Subjects.Commands.DeleteSubject;

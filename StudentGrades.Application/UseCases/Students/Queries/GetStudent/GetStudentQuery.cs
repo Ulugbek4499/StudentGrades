@@ -28,8 +28,8 @@ namespace StudentGrades.Application.UseCases.Students.Queries.GetStudent
         public async Task<StudentDto> Handle(GetStudentQuery request, CancellationToken cancellationToken)
         {
 
-            Student maybeStudent = await
-                _context.Students.FindAsync(new object[] { request.StudentId });
+            Student? maybeStudent = await
+                _context.Students.FindAsync(request.StudentId);
 
             ValidateStudentIsNotNull(request, maybeStudent);
 

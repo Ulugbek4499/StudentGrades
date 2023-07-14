@@ -10,7 +10,7 @@ namespace StudentGrades.Application.UseCases.Grades.Commands.UpdateGrade
     public class UpdateGradeCommand : IRequest<GradeDto>
     {
         public Guid Id { get; set; }
-        public int GradeNum { get; set; }
+        public int Score { get; set; }
         public Guid SubjectId { get; set; }
         public Guid StudentId { get; set; }
     }
@@ -44,7 +44,7 @@ namespace StudentGrades.Application.UseCases.Grades.Commands.UpdateGrade
 
             ValidateSubjectsAreNotNull(request, maybeSubject);
 
-            maybeGrade.GradeNum = request.GradeNum;
+            maybeGrade.Score = request.Score;
             maybeGrade.Student = maybeStudent;
             maybeGrade.Subject = maybeSubject;
 

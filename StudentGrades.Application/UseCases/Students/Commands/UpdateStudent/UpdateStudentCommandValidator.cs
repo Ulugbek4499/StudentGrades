@@ -28,11 +28,6 @@ namespace StudentGrades.Application.UseCases.Students.Commands.UpdateStudent
                .NotEmpty()
                .MaximumLength(70)
                .WithMessage("Email is required.");
-
-            RuleFor(p => p.StudentRegesterNumber)
-               .NotEmpty()
-               .MaximumLength(15)
-               .WithMessage("Student Regester Number is required.");
         }
     }
 }

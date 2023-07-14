@@ -4,7 +4,7 @@ namespace StudentGrades.Domain.Entities
 {
     public class Grade : BaseAuditableEntity
     {
-        public int GradeNum { get; set; }
+        public int Score { get; set; }
 
         public Guid SubjectId { get; set; }
         public Subject Subject { get; set; }

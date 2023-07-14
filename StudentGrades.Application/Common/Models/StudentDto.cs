@@ -9,7 +9,6 @@ namespace StudentGrades.Application.Common.Models
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public string Email { get; set; }
-        public string StudentRegesterNumber { get; set; }
-        public ICollection<GradeDto> Grades { get; set; }
+        public ICollection<GradeDto>? Grades { get; set; }
     }
 }

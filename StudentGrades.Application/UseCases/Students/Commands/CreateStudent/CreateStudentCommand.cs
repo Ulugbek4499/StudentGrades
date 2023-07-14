@@ -11,7 +11,6 @@ namespace StudentGrades.Application.UseCases.Students.Commands.CreateStudent
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public string Email { get; set; }
-        public string StudentRegesterNumber { get; set; }
     }
 
     public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand, StudentDto>
@@ -32,7 +31,6 @@ namespace StudentGrades.Application.UseCases.Students.Commands.CreateStudent
                 Name = request.Name,
                 BirthDate = request.BirthDate,
                 Email = request.Email,
-                StudentRegesterNumber = request.StudentRegesterNumber
             };
 
             student = _context.Students.Add(student).Entity;

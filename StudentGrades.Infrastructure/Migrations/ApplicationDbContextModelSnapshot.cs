@@ -31,7 +31,7 @@ namespace StudentGrades.Infrastructure.Migrations
                     b.Property<DateTimeOffset>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("GradeNum")
+                    b.Property<int>("Score")
                         .HasColumnType("integer");
 
                     b.Property<Guid>("StudentId")
@@ -69,10 +69,6 @@ namespace StudentGrades.Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("StudentRegesterNumber")
                         .IsRequired()
                         .HasColumnType("text");
 

@@ -29,9 +29,6 @@ namespace StudentGrades.Application.UseCases.Teachers.Commands.UpdateTeacher
                .MaximumLength(70)
                .WithMessage("Email is required.");
 
-            RuleFor(u => u.Subjects)
-                .ForEach(r => r.NotEqual((Guid)default))
-                .WithMessage("Please enter valid subject");
         }
     }
 }

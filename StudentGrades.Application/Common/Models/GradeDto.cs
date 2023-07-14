@@ -11,8 +11,10 @@ namespace StudentGrades.Application.Common.Models
     {
         [JsonProperty("grade_id")]
         public Guid Id { get; set; }
-        public int GradeNum { get; set; }
-        public SubjectDto Subject { get; set; }
-        public StudentDto Student { get; set; }
+        public int Score { get; set; }
+        //public SubjectDto Subject { get; set; }
+        public Guid SubjectId { get; set; }
+        public Guid StudentId { get; set; }
+        //public StudentDto Student { get; set; }
     }
 }

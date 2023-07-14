@@ -7,8 +7,6 @@ namespace StudentGrades.Domain.Entities
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public string Email { get; set; }
-        public string StudentRegesterNumber { get; set; }
-
-        public virtual ICollection<Grade> Grades { get; set; }
+        public virtual ICollection<Grade>? Grades { get; set; }
     }   
 }

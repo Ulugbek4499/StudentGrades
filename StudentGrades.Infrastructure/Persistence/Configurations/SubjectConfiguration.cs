@@ -13,7 +13,7 @@ namespace StudentGrades.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Subject> builder)
         {
-            builder.Navigation(s => s.Teacher).AutoInclude();
+            builder.Navigation(s => s.Grades).AutoInclude();
         }
     }
 }

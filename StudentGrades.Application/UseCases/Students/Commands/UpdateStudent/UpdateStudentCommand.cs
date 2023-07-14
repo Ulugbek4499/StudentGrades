@@ -13,7 +13,6 @@ namespace StudentGrades.Application.UseCases.Students.Commands.UpdateStudent
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public string Email { get; set; }
-        public string StudentRegesterNumber { get; set; }
     }
 
     public class UpdateStudentCommandHandler : IRequestHandler<UpdateStudentCommand, StudentDto>
@@ -37,7 +36,6 @@ namespace StudentGrades.Application.UseCases.Students.Commands.UpdateStudent
             maybeStudent.Name = request.Name;
             maybeStudent.Email = request.Email;
             maybeStudent.BirthDate = request.BirthDate;
-            maybeStudent.StudentRegesterNumber = request.StudentRegesterNumber;
 
             await _context.SaveChangesAsync(cancellationToken);
 

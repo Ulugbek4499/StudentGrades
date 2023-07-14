@@ -12,7 +12,6 @@ namespace StudentGrades.Application.UseCases.Subjects.Commands.UpdateSubject
         public Guid Id { get; set; }
         public string SubjectName { get; set; }
         public Guid TeacherId { get; set; }
-        public virtual ICollection<Guid> Grades { get; set; }
     }
 
     public class UpdateSubjectCommandHandler : IRequestHandler<UpdateSubjectCommand, SubjectDto>
@@ -33,14 +32,7 @@ namespace StudentGrades.Application.UseCases.Subjects.Commands.UpdateSubject
 
             ValidateSubjectIsNotNull(request, maybeSubject);
 
-            bool areAllExist = request.Grades.All(
-                x => _context.Grades.Any(p => p.Id.Equals(x)));
-
-            ValidateAllGradesExist(areAllExist);
-
-            List<Grade> grades = _context.Grades
-                .Where(r => request.Grades.Contains(r.Id)).ToList();
-
+          
             Teacher? maybeTeacher =
               _context.Teachers.SingleOrDefault(p => p.Id.Equals(request.TeacherId));
 
@@ -48,7 +40,6 @@ namespace StudentGrades.Application.UseCases.Subjects.Commands.UpdateSubject
 
             maybeSubject.SubjectName = request.SubjectName;
             maybeSubject.Teacher = maybeTeacher;
-            maybeSubject.Grades = grades;
 
             maybeSubject = _context.Subjects.Update(maybeSubject).Entity;
 
@@ -62,14 +53,6 @@ namespace StudentGrades.Application.UseCases.Subjects.Commands.UpdateSubject
             if (maybeTeacher == null)
             {
                 throw new NotFoundException(nameof(Teacher), request.TeacherId);
-            }
-        }
-
-        private void ValidateAllGradesExist(bool areAllExist)
-        {
-            if (!areAllExist)
-            {
-                throw new NotFoundException("Grade does not exist");
             }
         }
 

@@ -12,8 +12,8 @@ using StudentGrades.Infrastructure.Persistence;
 namespace StudentGrades.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230713133808_Initials")]
-    partial class Initials
+    [Migration("20230714101801_intss")]
+    partial class intss
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace StudentGrades.Infrastructure.Migrations
                     b.Property<DateTimeOffset>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("GradeNum")
+                    b.Property<int>("Score")
                         .HasColumnType("integer");
 
                     b.Property<Guid>("StudentId")
@@ -72,10 +72,6 @@ namespace StudentGrades.Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("StudentRegesterNumber")
                         .IsRequired()
                         .HasColumnType("text");
 

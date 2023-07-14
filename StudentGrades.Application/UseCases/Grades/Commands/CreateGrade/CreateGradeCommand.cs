@@ -9,7 +9,7 @@ namespace StudentGrades.Application.UseCases.Grades.Commands.CreateGrade
 {
     public class CreateGradeCommand : IRequest<GradeDto>
     {
-        public int GradeNum { get; set; }
+        public int Score { get; set; }
         public Guid SubjectId { get; set; }
         public Guid StudentId { get; set; }
     }
@@ -35,7 +35,7 @@ namespace StudentGrades.Application.UseCases.Grades.Commands.CreateGrade
 
             var grade = new Grade()
             {
-                GradeNum = request.GradeNum,
+                Score = request.Score,
                 Student = maybeStudent,
                 Subject = maybeSubject
             };

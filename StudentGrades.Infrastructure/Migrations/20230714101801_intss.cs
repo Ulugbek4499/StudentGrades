@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StudentGrades.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initials : Migration
+    public partial class intss : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,6 @@ namespace StudentGrades.Infrastructure.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
-                    StudentRegesterNumber = table.Column<string>(type: "text", nullable: false),
                     CreatedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     UpdatedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false)
                 },
@@ -70,7 +69,7 @@ namespace StudentGrades.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    GradeNum = table.Column<int>(type: "integer", nullable: false),
+                    Score = table.Column<int>(type: "integer", nullable: false),
                     SubjectId = table.Column<Guid>(type: "uuid", nullable: false),
                     StudentId = table.Column<Guid>(type: "uuid", nullable: false),
                     CreatedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),

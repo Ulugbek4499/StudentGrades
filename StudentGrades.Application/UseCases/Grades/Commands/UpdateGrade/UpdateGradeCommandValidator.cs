@@ -18,7 +18,7 @@ namespace StudentGrades.Application.UseCases.Grades.Commands.UpdateGrade
                 .NotEqual((Guid)default)
                 .WithMessage("Student id is required.");
 
-            RuleFor(t => t.GradeNum)
+            RuleFor(t => t.Score)
                 .NotEqual((int)default)
                 .GreaterThan(0)
                 .WithMessage("Grade is required.");

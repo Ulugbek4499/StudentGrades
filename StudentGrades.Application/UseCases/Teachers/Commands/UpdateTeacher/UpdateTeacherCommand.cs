@@ -13,7 +13,6 @@ namespace StudentGrades.Application.UseCases.Teachers.Commands.UpdateTeacher
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public string Email { get; set; }
-        public ICollection<Guid> Subjects { get; set; }
     }
 
     public class UpdateTeacherCommandHandler : IRequestHandler<UpdateTeacherCommand, TeacherDto>
@@ -34,32 +33,15 @@ namespace StudentGrades.Application.UseCases.Teachers.Commands.UpdateTeacher
 
             ValidateTeacherIsNotNull(request, maybeTeacher);
 
-            bool areAllExist = request.Subjects.All(
-                x => _context.Subjects.Any(p => p.Id.Equals(x)));
-
-            ValidateAllSubjectsExist(areAllExist);
-
-            List<Subject> subjects = _context.Subjects
-                .Where(r => request.Subjects.Contains(r.Id)).ToList();
-
             maybeTeacher.Name = request.Name;
             maybeTeacher.Email = request.Email;
             maybeTeacher.BirthDate = request.BirthDate;
-            maybeTeacher.Subjects = subjects;
 
             maybeTeacher = _context.Teachers.Update(maybeTeacher).Entity;
 
             await _context.SaveChangesAsync(cancellationToken);
 
             return _mapper.Map<TeacherDto>(maybeTeacher);
-        }
-
-        private void ValidateAllSubjectsExist(bool areAllExist)
-        {
-            if (!areAllExist)
-            {
-                throw new NotFoundException("Subject does not exist");
-            }
         }
 
         private void ValidateTeacherIsNotNull(UpdateTeacherCommand request, Teacher? maybeTeacher)

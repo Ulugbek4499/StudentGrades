@@ -14,10 +14,6 @@ namespace StudentGrades.Application.UseCases.Subjects.Commands.CreateSubject
             RuleFor(t => t.TeacherId).NotEmpty()
                 .NotEqual((Guid)default)
                 .WithMessage("Teacher id is required.");
-
-            /*   RuleFor(u => u.Grades)
-                   .ForEach(r => r.NotEqual((Guid)default))
-                   .WithMessage("Please enter valid grade");*/
         }
     }
 }

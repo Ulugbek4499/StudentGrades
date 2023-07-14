@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using StudentGrades.Application.Common.Interfaces;
 using StudentGrades.Domain.Commons;
 
-namespace StudentGrades.Infrastructure.Persistence.Interceptors
+namespace StudentGrades.Infrastructure.Persistence.Configurations.Interceptors
 {
     public class AuditableEntitySaveChangesInterceptor : SaveChangesInterceptor
     {

@@ -32,7 +32,6 @@ namespace StudentGrades.Application.UseCases.Subjects.Commands.UpdateSubject
 
             ValidateSubjectIsNotNull(request, maybeSubject);
 
-
             Teacher? maybeTeacher =
               _context.Teachers.SingleOrDefault(p => p.Id.Equals(request.TeacherId));
 
